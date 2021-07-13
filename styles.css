@@ -4,11 +4,11 @@
 /* Setup variables for the project */
 :root {
   /* Colors */
-  --background: #29262E;
-  --border: #5F4256;
+  --background: #29262e;
+  --border: #5f4256;
   --text: #e4e4e4;
-  --link: #DB836B;
-  --hover: #FBB864;
+  --link: #db836b;
+  --hover: #fbb864;
 
   /* Fonts */
   --fonts: 'Open Sans', sans-serif;
@@ -19,7 +19,9 @@
 
 /* Reset browser defaults and set base layout */
 
-*, ::before, ::after {
+*,
+::before,
+::after {
   box-sizing: border-box;
 }
 
@@ -32,19 +34,21 @@ body {
   margin: 0;
   background-color: var(--background);
   color: var(--text);
-  
+
   /* The grid and the grid elements makes a website filling the screen with a header and a footer(tob box for implementing on michael-h.dk) */
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto auto 1fr auto;
   grid-template-areas: 'top-bar' 'header' 'main' 'footer';
-  
+
   /* Set the size to fill out the screen */
   width: 100%;
   min-height: 100vh;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-weight: var(--light);
 }
 
@@ -72,7 +76,8 @@ a:active {
   color: var(--hover);
 }
 
-canvas, svg {
+canvas,
+svg {
   display: block;
   max-width: 100%;
   height: auto;
@@ -87,7 +92,6 @@ canvas, svg {
 }
 
 .top-bar {
-
   /* Used when implemented with michael-h.dk */
   display: none;
   grid-area: top-bar;
@@ -131,7 +135,7 @@ nav div:not(:last-child) {
 
 header {
   grid-area: header;
-  display:flex;
+  display: flex;
   justify-content: center;
   align-items: center;
   height: 3rem;
@@ -164,7 +168,7 @@ footer .container p {
 }
 
 .social svg {
-  max-width: 2rem;
+  width: 2rem;
   margin-left: 1.2rem;
 }
 
@@ -177,7 +181,7 @@ footer .container p {
 }
 
 #twitter {
-  fill:  #55acee;
+  fill: #55acee;
 }
 
 #linkedin {
@@ -191,8 +195,3 @@ footer .container p {
     align-items: center;
   }
 }
-
-
-
-
-

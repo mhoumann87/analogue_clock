@@ -1,5 +1,7 @@
 // Get the canvas element on the page
 const canvas = document.querySelector('#canvas');
+// Get the section under the canvas
+const showTime = document.querySelector('.show-time');
 
 // Set canvas up to use a 2D drawing object
 const ctx = canvas.getContext('2d');
@@ -18,6 +20,17 @@ const radius = halfHeight * 0.9;
 const drawClock = () => {
   drawFace();
   drawNumbers();
+  drawTime();
+};
+
+// Helper function to add a leading 0 before minutes
+// and seconds on the "digital" clock
+const addZero = time => {
+  if (time < 10) {
+    return `0${time.toString()}`;
+  } else {
+    return time.toString();
+  }
 };
 
 // Draw the clock face
@@ -66,6 +79,19 @@ const drawNumbers = () => {
     ctx.translate(0, radius * 0.85);
     ctx.rotate(-angle);
   }
+};
+
+const drawTime = () => {
+  const now = new Date();
+  let hours = now.getHours();
+  let minutes = now.getMinutes();
+  let seconds = now.getSeconds();
+  // Add the time as a "digital" clock below the canvas
+  showTime.innerHTML = `<p>${hours.toString()} ${addZero(minutes)} ${addZero(
+    seconds
+  )}</p>`;
+  // Draw the line showing th hours
+  hours = hours % 12;
 };
 
 drawClock();

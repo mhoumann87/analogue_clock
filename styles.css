@@ -144,6 +144,15 @@ header {
 main {
   grid-area: main;
   margin: 1rem auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+main p {
+  font-size: 2rem;
+  letter-spacing: 0.1rem;
 }
 
 footer {

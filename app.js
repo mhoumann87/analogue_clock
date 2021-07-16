@@ -102,8 +102,8 @@ const drawTime = () => {
 
   hours =
     hours * (Math.PI / 6) +
-  minutes * (Math.PI / (6 * 60)) +
-  seconds * (Math.PI / (360 * 60));
+    minutes * (Math.PI / (6 * 60)) +
+    seconds * (Math.PI / (360 * 60));
   console.log(hours);
 
   // Draw the hand
@@ -118,6 +118,7 @@ const drawTime = () => {
   drawHands(seconds, radius * 0.9, radius * 0.02);
 };
 
+// Position the hands of the clock based on the time
 const drawHands = (position, length, width) => {
   ctx.beginPath();
   ctx.lineWidth = width;
@@ -129,4 +130,6 @@ const drawHands = (position, length, width) => {
   ctx.rotate(-position);
 };
 
-drawClock();
+// Make the clock each second and draw it in the canvas
+
+setInterval(drawClock, 1000);
